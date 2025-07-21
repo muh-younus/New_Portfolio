@@ -1,0 +1,11 @@
+const data = [
+  {
+    menu: [
+      { path: '/', component: 'Home' },
+      { path: '/about', component: 'About' },
+      { path: '/projects', component: 'Projects' },
+    ],
+  },
+];
+
+export default data;
