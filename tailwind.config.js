@@ -8,4 +8,8 @@ export default {
     extend: {},
   },
   plugins: [],
+  safelist: [
+  'grid-cols-2',
+  'w-[1300px]',
+]
 }

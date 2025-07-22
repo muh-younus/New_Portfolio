@@ -1,10 +1,10 @@
-function Project() {
+function Project({isOpen}) {
   return (
-    <div className="bg-gray-900 min-h-screen px-4 bg-gradient-to-b from-purple-700 to-purple-400 py-10 text-white">
+    <div className={`bg-gray-900 min-h-screen px-4 bg-gradient-to-br  from-slate-900 via-purple-900 to-slate-900 ${isOpen?'w-[1300px]':'w-full'}  py-10 text-white`}>
       <h1 className="text-3xl font-bold text-center mb-4">Projects</h1>
       <hr className="h-0.5 w-[200px] bg-white mx-auto mb-12" />
 
-      <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+      <div className={` ${isOpen?'grid grid-cols-2 w-[1300px]':'w-full flex flex-wrap justify-center '} gap-6  sm:gap-8`}>
         {/* Project 1 */}
         <div className="w-full sm:w-[300px] bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 flex items-center gap-4 p-5 sm:p-6">
           <div className="shrink-0">

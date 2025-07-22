@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-function Degree() {
+function Degree({isOpen}) {
   return (
-    <section className="py-20 bg-slate-900">
+    <section className={`py-20 bg-gradient-to-br  from-slate-900 via-purple-900 to-slate-900 ${isOpen?'w-[1300px]':'w-full'}`}>
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-white text-center mb-8">
           <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Education</span>

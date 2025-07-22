@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const About = () => {
+const About = ({isOpen}) => {
   const technologies = ["HTML", "CSS", "JavaScript", "React"]
 
   return (
-    <section className="py-16 px-6 bg-gradient-to-b from-purple-700 to-purple-400 h-screen flex items-center justify-center">
+    <section className={`py-16 px-6 bg-gradient-to-br  from-slate-900 via-purple-900 to-slate-900 ${isOpen?'w-[1300px]':'w-full'} h-screen flex items-center justify-center`}>
       <div className="w-full max-w-xl bg-white rounded-xl shadow-xl p-8 sm:p-10 text-center">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-6">
           My Technologies

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function Form() {
+export default function Form({isOpen}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -55,7 +55,7 @@ export default function Form() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-purple-700 to-purple-400 min-h-screen p-4 sm:p-8 flex flex-col items-center">
+    <div className={`bg-gradient-to-br  from-slate-900 via-purple-900 to-slate-900 min-h-screen ${isOpen?'w-[1300px]':'w-full'} p-4 sm:p-8 flex flex-col items-center`}>
       {/* Form Section */}
       <div className="flex justify-center items-center w-full max-w-5xl bg-white rounded-lg shadow-xl p-6 sm:p-10 mb-8">
         <form className="flex flex-col md:flex-row flex-wrap gap-4 w-full justify-between items-start">

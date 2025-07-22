@@ -10,10 +10,20 @@ import ProtectedRoute from './compnent/Protected';
 import './App.css';
 import Login from './compnent/Login';
 import Form from './compnent/Form';
+import Slider from './compnent/Slider'
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [role, setRole] = useState('');
+   const [slider,setSlider] = useState(false);
+    
+    const onToggle = (toggleSlider) =>{
+  
+      setSlider(prev => !prev);
+      console.log("The slider is: ", slider);
+  
+  
+    }
 
   return (
     <BrowserRouter>
@@ -21,11 +31,13 @@ function App() {
         <Login setLoggedIn={setLoggedIn} setRole={setRole} />
       ) : (
         <>
-          <Navbar />
+          <Navbar toggleSlider={onToggle} />
+          <div className="flex">
+          <Slider isOpen={slider}/>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/form" element={<Form />} />
+            <Route path="/" element={<Home isOpen={slider} />} />
+            <Route path="/about" element={<About isOpen={slider}/>} />
+            <Route path="/form" element={<Form isOpen={slider}/>} />
 
             {role === 'admin' && (
               <>
@@ -36,7 +48,7 @@ function App() {
                       element={<Degree />}
                       allowedRoles={['admin']}
                       role={role}
-                    />
+                   isOpen={slider} />
                   }
                 />
                 <Route
@@ -46,12 +58,13 @@ function App() {
                       element={<Project />}
                       allowedRoles={['admin']}
                       role={role}
-                    />
+                    isOpen={slider}/>
                   }
                 />
               </>
             )}
           </Routes>
+          </div>
           
         </>
       )}
