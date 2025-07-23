@@ -31,7 +31,7 @@ function App() {
         <Login setLoggedIn={setLoggedIn} setRole={setRole} />
       ) : (
         <>
-          <Navbar toggleSlider={onToggle} />
+          <Navbar toggleSlider={onToggle}  setLoggedIn={setLoggedIn} setRole={setRole}/>
           <div className="flex">
           <Slider isOpen={slider}/>
           <Routes>

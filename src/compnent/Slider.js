@@ -7,6 +7,7 @@ import {
   FormInput,
   GraduationCap,
   ChevronDown,
+  X,
 } from "lucide-react";
 
 function Slider({ isOpen }) {
@@ -51,8 +52,8 @@ function Slider({ isOpen }) {
       }  bg-purple-950 text-white`}
     >
       {console.log("the slide is: ", isOpen)}
-      <div className="p-4 text-2xl font-bold border-b border-gray-700">
-        Navigation
+      <div className="p-4 text-2xl font-bold border-b flex justif-center items-center gap-9 border-gray-700">
+        <span>Navigation</span><span><X className="text-[xl]"/></span>
       </div>
       <nav className="flex-1 py-4">
         <ul className="space-y-1 transition-all delay-400 duration-500">
