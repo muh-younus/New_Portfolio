@@ -13,7 +13,13 @@ function Slider({ isOpen }) {
   const [openMenu, setOpenMenu] = useState(false);
 
   const toggle = () => {
-    setOpenMenu((prev) => !prev);
+    const newState =!openMenu;
+    setOpenMenu(newState);
+
+    if(!newState){
+
+      setColor(false)
+    }
   };
   const [about, setAbout] = useState(false);
 
@@ -26,6 +32,13 @@ function Slider({ isOpen }) {
   const projectToggle = ()=>{
 
     setProjectDropdown((prev)=>!prev)
+  }
+
+  const [color, setColor]=useState(false);
+  const changeColor = ()=>{
+
+    setColor(prev => !prev)
+    console.log("color")
   }
 
 
@@ -62,7 +75,7 @@ function Slider({ isOpen }) {
             >
               <Link to="/">
                 <li className="hover:text-gray-500">
-                    <Link to="/">Hero-Section</Link>
+                    <Link className={color? "text-blue-400": ""} to="/" onClick={changeColor}>Hero-Section</Link>
                 </li>
               </Link>
             </ul>
