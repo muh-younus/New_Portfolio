@@ -11,8 +11,10 @@ import './App.css';
 import Login from './compnent/Login';
 import Form from './compnent/Form';
 import Slider from './compnent/Slider'
+import Graphsection from './compnent/Graphsection';
 
 function App() {
+ 
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [role, setRole] = useState('');
    const [slider,setSlider] = useState(false);
@@ -33,11 +35,12 @@ function App() {
         <>
           <Navbar toggleSlider={onToggle}  setLoggedIn={setLoggedIn} setRole={setRole}/>
           <div className="flex">
-          <Slider isOpen={slider}/>
+          <Slider isOpen={slider} />
           <Routes>
             <Route path="/" element={<Home isOpen={slider} />} />
             <Route path="/about" element={<About isOpen={slider}/>} />
             <Route path="/form" element={<Form isOpen={slider}/>} />
+            <Route path="/graphsection" element={<Graphsection isOpen={slider}/>} />
 
             {role === 'admin' && (
               <>

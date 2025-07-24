@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { FaBars } from 'react-icons/fa';
 import Slider from './Slider';
+import { LogOut } from "lucide-react";
 
 function Navbar({ toggleSlider, setLoggedIn, setRole }) {
   const [menu, setMenu] = React.useState(false);
@@ -52,7 +53,7 @@ function Navbar({ toggleSlider, setLoggedIn, setRole }) {
       </div>
       
       <div>
-       <button onClick ={logOut} className="text-white items-center text-center">LogOut</button>
+       <button onClick ={logOut} className="text-white flex items-center gap-1 text-center"><span>LogOut</span><span><LogOut className="text-[5px] text-white"/></span></button>
       </div>
     </nav>
   );
